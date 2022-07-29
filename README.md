@@ -1,16 +1,16 @@
-## Проект для развёртывания в инфраструктуре Yandex Cloud с помощью terraform кластера docker swarm с сервисами  wordpress, mysql (master+replica), gitlab, gitlab-runner, nginx, prometheus, grafana, alertmanager
+## РџСЂРѕРµРєС‚ РґР»СЏ СЂР°Р·РІС‘СЂС‚С‹РІР°РЅРёСЏ РІ РёРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂРµ Yandex Cloud СЃ РїРѕРјРѕС‰СЊСЋ terraform РєР»Р°СЃС‚РµСЂР° docker swarm СЃ СЃРµСЂРІРёСЃР°РјРё  wordpress, mysql (master+replica), gitlab, gitlab-runner, nginx, prometheus, grafana, alertmanager
 
-Для развёртывания выполнить следующие действия (*предварительно требуется делегировать управление доменом ns серверам Yandex Cloud DNS, по умолчанию используется домен itpot.ru):  
-1. В файле src/packer/centos-7-base.json указать folder_id и token  
-2. Выполнить `cd src/packer/ && packer validate centos-7-base.json && packer build centos-7-base.json`  
-3. В файле src/terraform/variables.tf заполнить все параметры  
-4. В файле src/terraform/provider.tf указать access_key и secret_key для backend "s3"  
+Р”Р»СЏ СЂР°Р·РІС‘СЂС‚С‹РІР°РЅРёСЏ РІС‹РїРѕР»РЅРёС‚СЊ СЃР»РµРґСѓСЋС‰РёРµ РґРµР№СЃС‚РІРёСЏ (*РїСЂРµРґРІР°СЂРёС‚РµР»СЊРЅРѕ С‚СЂРµР±СѓРµС‚СЃСЏ РґРµР»РµРіРёСЂРѕРІР°С‚СЊ СѓРїСЂР°РІР»РµРЅРёРµ РґРѕРјРµРЅРѕРј ns СЃРµСЂРІРµСЂР°Рј Yandex Cloud DNS, РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґРѕРјРµРЅ itpot.ru):  
+1. Р’ С„Р°Р№Р»Рµ src/packer/centos-7-base.json СѓРєР°Р·Р°С‚СЊ folder_id Рё token  
+2. Р’С‹РїРѕР»РЅРёС‚СЊ `cd src/packer/ && packer validate centos-7-base.json && packer build centos-7-base.json`  
+3. Р’ С„Р°Р№Р»Рµ src/terraform/variables.tf Р·Р°РїРѕР»РЅРёС‚СЊ РІСЃРµ РїР°СЂР°РјРµС‚СЂС‹  
+4. Р’ С„Р°Р№Р»Рµ src/terraform/provider.tf СѓРєР°Р·Р°С‚СЊ access_key Рё secret_key РґР»СЏ backend "s3"  
 5. terraform init  
 6. terraform plan  
 7. terraform apply --auto-approve  
 
-![wordpress](./1.png)
-![gitlab](./2.png)
-![grafana](./3.png)
-![prometheus](./4.png)
-![alertmanager](./5.png)
+![wordpress](./img/1.png)
+![gitlab](./img/2.png)
+![grafana](./img/3.png)
+![prometheus](./img/4.png)
+![alertmanager](./img/5.png)
