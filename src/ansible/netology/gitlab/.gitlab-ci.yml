@@ -1,0 +1,11 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  tags:
+    - shell
+  script:
+    - shopt -s extglob
+    - cp -r !(.git) /var/www/html/
+    - cp -rf /gitlab-custom-config/wp-config.php /var/www/html/wp-config.php
